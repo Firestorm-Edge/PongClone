@@ -18,7 +18,7 @@ void GameManager::Play()
 
 void GameManager::HandleInput()
 {
-	//HANDLE WINDOW STUFF HERE!
+	//HANDLE WINDOW INPUT STUFF HERE!
 }
 
 void GameManager::Update()
