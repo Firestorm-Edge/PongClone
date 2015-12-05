@@ -1,20 +1,21 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class GameLoop
+class Loop
 {
 public:
-	GameLoop();
+	Loop();
 	void Update();
 	void Draw();
-	void Input(sf::Event e);
+	void Input();
 };
 
-class MenuLoop
+class GameLoop : Loop
 {
-public:
+	GameLoop();
+};
+
+class MenuLoop : Loop
+{
 	MenuLoop();
-	void Update();
-	void Draw();
-	void Input(sf::Event e);
 };
