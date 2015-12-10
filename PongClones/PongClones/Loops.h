@@ -7,7 +7,7 @@ public:
 	Loop();
 	void Update();
 	void Draw();
-	void Input();
+	void Input(sf::Event event);
 };
 
 class GameLoop : Loop

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Loops.h"
 
 class GameManager
 {
@@ -9,10 +9,9 @@ public:
 
 private:
 	sf::Window window;
-	//private Loop ActiveLoop;
 	bool running = true;
-	void HandleInput();
-	void PassInputs(sf::Event event);
+	void HandleEvents();
+	void PassInput(sf::Event event);
 	void Update();
 	void Draw();
 };

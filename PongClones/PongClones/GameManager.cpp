@@ -4,31 +4,33 @@
 GameManager::GameManager()
 {
 	sf::Window window(sf::VideoMode(800, 600), "Pong");
+	Loop ActiveLoop();
+	
 }
 
 void GameManager::Play()
 {
 	while (running) 
 	{
-		HandleInput();
+		HandleEvents();
 		Update();
 		Draw();
 	}
 	window.close();
 }
 
-void GameManager::HandleInput()
+void GameManager::HandleEvents()
 {
 	sf::Event event;
 	while (window.pollEvent(event))
 	{
 		if (event.type == sf::Event::Closed)
 			running = false;
-		else PassInputs(event);
+		else PassInput(event);
 	}
 }
 
-void GameManager::PassInputs(sf::Event event)
+void GameManager::PassInput(sf::Event event)
 {
 
 }
