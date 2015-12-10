@@ -4,7 +4,6 @@
 class Loop
 {
 public:
-	Loop();
 	void Update();
 	void Draw();
 	void Input(sf::Event event);
