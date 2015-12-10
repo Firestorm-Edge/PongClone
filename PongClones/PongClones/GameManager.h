@@ -8,7 +8,8 @@ public:
 	void Play();
 
 private:
-	sf::Window window;
+	sf::RenderWindow wind;
+	Loop ActiveLoop;
 	bool running = true;
 	void HandleEvents();
 	void PassInput(sf::Event event);

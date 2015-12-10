@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Loops.cpp" />
     <ClCompile Include="MenuLoop.cpp" />
     <ClCompile Include="PongClones.cpp" />
   </ItemGroup>
