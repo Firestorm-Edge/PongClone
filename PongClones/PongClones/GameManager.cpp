@@ -3,7 +3,7 @@
 
 GameManager::GameManager()
 {
-	//MAKE WINDOW HERE
+	sf::Window window(sf::VideoMode(800, 600), "Pong");
 }
 
 void GameManager::Play()
@@ -14,11 +14,23 @@ void GameManager::Play()
 		Update();
 		Draw();
 	}
+	window.close();
 }
 
 void GameManager::HandleInput()
 {
-	//HANDLE WINDOW INPUT STUFF HERE!
+	sf::Event event;
+	while (window.pollEvent(event))
+	{
+		if (event.type == sf::Event::Closed)
+			running = false;
+		else PassInputs(event);
+	}
+}
+
+void GameManager::PassInputs(sf::Event event)
+{
+
 }
 
 void GameManager::Update()

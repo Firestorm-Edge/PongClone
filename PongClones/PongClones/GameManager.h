@@ -8,9 +8,11 @@ public:
 	void Play();
 
 private:
-	//WINDOW VARIABLE HERE
+	sf::Window window;
+	//private Loop ActiveLoop;
 	bool running = true;
 	void HandleInput();
+	void PassInputs(sf::Event event);
 	void Update();
 	void Draw();
 };
