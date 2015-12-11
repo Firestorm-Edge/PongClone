@@ -5,12 +5,22 @@ GameManager::GameManager()
 {
 	sf::RenderWindow wind(sf::VideoMode(800, 600), "Pong");
 	Loop ActiveLoop;
-	//ActiveLoop = MenuLoop();
+	ActiveLoop = MenuLoop();
 }
 
 void GameManager::PassInput(sf::Event event)
 {
 	ActiveLoop.Input(event);
+}
+
+void GameManager::SwitchToGame()
+{
+	ActiveLoop = GameLoop();
+}
+
+void GameManager::SwitchToMenu()
+{
+	ActiveLoop = MenuLoop();
 }
 
 void GameManager::Update()

@@ -10,13 +10,13 @@ public:
 	void Input(sf::Event event);
 };
 
-class GameLoop : Loop
+class GameLoop : public Loop
 {
 public:
 	GameLoop();
 };
 
-class MenuLoop : Loop
+class MenuLoop : public Loop
 {
 public:
 	MenuLoop();
