@@ -3,42 +3,44 @@
 
 GameManager::GameManager()
 {
-	sf::Window window(sf::VideoMode(800, 600), "Pong");
+	sf::RenderWindow wind(sf::VideoMode(800, 600), "Pong");
+	Loop ActiveLoop;
+	//ActiveLoop = MenuLoop();
+}
+
+void GameManager::PassInput(sf::Event event)
+{
+	ActiveLoop.Input(event);
+}
+
+void GameManager::Update()
+{
+	ActiveLoop.Update();
+}
+
+void GameManager::Draw()
+{
+	ActiveLoop.Draw(&wind);
 }
 
 void GameManager::Play()
 {
 	while (running) 
 	{
-		HandleInput();
+		HandleEvents();
 		Update();
 		Draw();
 	}
-	window.close();
+	wind.close();
 }
 
-void GameManager::HandleInput()
+void GameManager::HandleEvents()
 {
 	sf::Event event;
-	while (window.pollEvent(event))
+	while (wind.pollEvent(event))
 	{
 		if (event.type == sf::Event::Closed)
 			running = false;
-		else PassInputs(event);
+		else PassInput(event);
 	}
-}
-
-void GameManager::PassInputs(sf::Event event)
-{
-
-}
-
-void GameManager::Update()
-{
-	//CURRENT LOOP UPDATE
-}
-
-void GameManager::Draw()
-{
-	//CURRENT LOOP DRAW!
 }
