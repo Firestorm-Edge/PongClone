@@ -12,7 +12,7 @@ public:
 private:
 	sf::RenderWindow wind;
 	Loop ActiveLoop;
-	bool running = true;
+	bool running;
 	void HandleEvents();
 	void PassInput(sf::Event event);
 	void Update();
