@@ -19,4 +19,10 @@ class MenuLoop : public Loop
 {
 public:
 	MenuLoop();
+	void Update();
+	void Draw(sf::RenderWindow win);
+	void Input();
+private:
+	sf::Text title;
+	sf::Text soloPlay;
 };
