@@ -1,10 +1,10 @@
 #include "Loops.h"
 #include "GameManager.h"
 
-GameManager::GameManager() : wind(sf::VideoMode(800, 600), "Pong"), running(true)
+GameManager::GameManager() : wind(sf::VideoMode(800, 600), "Pong"), running(true), ActiveLoop()
 {
 	wind.setVerticalSyncEnabled(true);
-	Loop ActiveLoop;
+	//Loop ActiveLoop;
 	ActiveLoop = MenuLoop();
 }
 
@@ -30,7 +30,9 @@ void GameManager::Update()
 
 void GameManager::Draw()
 {
+	wind.clear(sf::Color::Black);
 	ActiveLoop.Draw(&wind);
+	wind.display();
 }
 
 void GameManager::Play()

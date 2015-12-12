@@ -3,10 +3,10 @@
 
 MenuLoop::MenuLoop()
 {
-	sf::Font font = sf::Font();
+	/*sf::Font font = sf::Font();
 	font.loadFromFile("arial.ttf");
 	title = sf::Text("HERE BE PONG!",font,30);
-	soloPlay = sf::Text();
+	soloPlay = sf::Text();*/
 }
 
 void MenuLoop::Update() 
