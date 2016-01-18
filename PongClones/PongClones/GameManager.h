@@ -10,7 +10,7 @@ public:
 	void SwitchToMenu();
 
 private:
-	sf::RenderWindow wind;
+	sf::RenderWindow *wind;
 	Loop ActiveLoop;
 	bool running;
 	void HandleEvents();
