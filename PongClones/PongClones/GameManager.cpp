@@ -1,9 +1,14 @@
 #include "Loops.h"
 #include "GameManager.h"
 
-GameManager::GameManager() : wind(sf::VideoMode(800, 600), "Pong", sf::Style::Close | sf::Style::Titlebar), running(true), ActiveLoop()
+GameManager::GameManager() 
 {
-	wind.setVerticalSyncEnabled(true);
+	wind = (new sf::RenderWindow(sf::VideoMode(800, 600), "Pong"));
+	//wind.~RenderWindow(sf::VideoMode(800, 600), "Pong"); //, sf::Style::Close | sf::Style::Titlebar
+	wind->setVerticalSyncEnabled(true);
+	//Loop ActiveLoop;
+	running = true;
+	wind->setVerticalSyncEnabled(true);
 	ActiveLoop = new MenuLoop();
 }
 
@@ -24,15 +29,15 @@ void GameManager::Update()
 
 void GameManager::Draw()
 {
-	wind.clear(sf::Color::Black);
-	ActiveLoop->Draw(&wind);
-	wind.display();
+	wind->clear(sf::Color::Black);
+	ActiveLoop->Draw(wind);
+	wind->display();
 }
 
 void GameManager::HandleEvents()
 {
 	sf::Event event;
-	while (wind.pollEvent(event))
+	while (wind->pollEvent(event))
 	{
 		if (event.type == sf::Event::Closed)
 			running = false;
