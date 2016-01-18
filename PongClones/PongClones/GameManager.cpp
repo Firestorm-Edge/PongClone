@@ -4,8 +4,7 @@
 GameManager::GameManager() : wind(sf::VideoMode(800, 600), "Pong", sf::Style::Close | sf::Style::Titlebar), running(true), ActiveLoop()
 {
 	wind.setVerticalSyncEnabled(true);
-	//Loop ActiveLoop;
-	ActiveLoop = MenuLoop();
+	ActiveLoop = new MenuLoop();
 }
 
 void GameManager::Play()
@@ -20,13 +19,13 @@ void GameManager::Play()
 
 void GameManager::Update()
 {
-	ActiveLoop.Update();
+	ActiveLoop->Update();
 }
 
 void GameManager::Draw()
 {
 	wind.clear(sf::Color::Black);
-	ActiveLoop.Draw(&wind);
+	ActiveLoop->Draw(&wind);
 	wind.display();
 }
 
@@ -43,15 +42,15 @@ void GameManager::HandleEvents()
 
 void GameManager::PassInput(sf::Event event)
 {
-	ActiveLoop.Input(event);
+	ActiveLoop->Input(event);
 }
 
 void GameManager::SwitchToGame()
 {
-	ActiveLoop = GameLoop();
+	ActiveLoop = &GameLoop();
 }
 
 void GameManager::SwitchToMenu()
 {
-	ActiveLoop = MenuLoop();
+	ActiveLoop = new MenuLoop();
 }

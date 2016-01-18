@@ -1,7 +1,7 @@
 #pragma once
 #include "Loops.h"
 
-class GameManager
+class GameManager : sf::RenderWindow
 {
 public:
 	GameManager();
@@ -11,7 +11,7 @@ public:
 
 private:
 	sf::RenderWindow wind;
-	Loop ActiveLoop;
+	Loop *ActiveLoop;
 	bool running;
 	void HandleEvents();
 	void PassInput(sf::Event event);
