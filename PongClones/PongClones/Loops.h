@@ -4,9 +4,10 @@
 class Loop
 {
 public:
-	void Update();
-	void Draw(sf::RenderWindow* window);
-	void Input(sf::Event event);
+	Loop() {}
+	void Update() {}
+	virtual void Draw(sf::RenderWindow* window) {}
+	void Input(sf::Event event) {}
 };
 
 class GameLoop : public Loop
@@ -20,7 +21,7 @@ class MenuLoop : public Loop
 public:
 	MenuLoop();
 	void Update();
-	void Draw(sf::RenderWindow win);
+	virtual void Draw(sf::RenderWindow* win);
 	void Input();
 private:
 	sf::Text title;

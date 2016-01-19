@@ -21,9 +21,9 @@ void MenuLoop::Input()
 	//if Select, check what option is picked.
 }
 
-void MenuLoop::Draw(sf::RenderWindow win)
+void MenuLoop::Draw(sf::RenderWindow *win)
 {
-	win.draw(title);
+	win->draw(title);
 	//Draw Title.
 	//Draw cursor.
 	//Draw menu options.
