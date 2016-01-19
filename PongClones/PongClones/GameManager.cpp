@@ -4,9 +4,7 @@
 GameManager::GameManager() 
 {
 	wind = (new sf::RenderWindow(sf::VideoMode(800, 600), "Pong"));
-	//wind.~RenderWindow(sf::VideoMode(800, 600), "Pong"); //, sf::Style::Close | sf::Style::Titlebar
 	wind->setVerticalSyncEnabled(true);
-	//Loop ActiveLoop;
 	running = true;
 	wind->setVerticalSyncEnabled(true);
 	ActiveLoop = new MenuLoop();
