@@ -5,15 +5,20 @@ class Loop
 {
 public:
 	Loop() {}
-	void Update() {}
+	virtual void Update() {}
 	virtual void Draw(sf::RenderWindow* window) {}
-	void Input(sf::Event event) {}
+	virtual void Input(sf::Event event) {}
 };
 
 class GameLoop : public Loop
 {
 public:
 	GameLoop();
+	void Update();
+	virtual void Draw(sf::RenderWindow* win);
+	virtual void Input(sf::Event event);
+private:
+	sf::CircleShape circle;
 };
 
 class MenuLoop : public Loop

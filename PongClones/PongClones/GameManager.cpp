@@ -3,7 +3,7 @@
 
 GameManager::GameManager() 
 {
-	wind = (new sf::RenderWindow(sf::VideoMode(800, 600), "Pong"));
+	wind = (new sf::RenderWindow(sf::VideoMode(800, 600), "Pong", sf::Style::Close | sf::Style::Titlebar));
 	wind->setVerticalSyncEnabled(true);
 	running = true;
 	wind->setVerticalSyncEnabled(true);
@@ -50,7 +50,7 @@ void GameManager::PassInput(sf::Event event)
 
 void GameManager::SwitchToGame()
 {
-	ActiveLoop = &GameLoop();
+	ActiveLoop = new GameLoop();
 }
 
 void GameManager::SwitchToMenu()
