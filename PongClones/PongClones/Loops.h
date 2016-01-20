@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "GameActors.h"
 
 class Loop
 {
@@ -19,6 +20,7 @@ public:
 	virtual void Input(sf::Event event);
 private:
 	sf::CircleShape circle;
+	Ball ball;
 };
 
 class MenuLoop : public Loop

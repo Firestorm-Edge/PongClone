@@ -15,6 +15,8 @@ class Ball
 {
 public:
 	Ball(int xLoc, int yLoc);
+	void Ball::Draw(sf::RenderWindow *wind);
+	void update();
 	void reset();
 	int getX();
 	int getY();
