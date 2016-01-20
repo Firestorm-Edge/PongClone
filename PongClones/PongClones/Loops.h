@@ -26,4 +26,5 @@ public:
 private:
 	sf::Text title;
 	sf::Text soloPlay;
+	sf::Text multiPlay;
 };
