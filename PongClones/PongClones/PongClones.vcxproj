@@ -150,6 +150,11 @@ xcopy /y /d  "..\lib\SFML-2.3.2\bin\sfml-audio-d-2.dll" "$(OutDir)"</Command>
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Loops.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="X-Cryption.ttf">
+      <DeploymentContent>true</DeploymentContent>
+    </Font>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\sfml-graphics.redist.2.3.0.0\build\native\sfml-graphics.redist.targets" Condition="Exists('..\packages\sfml-graphics.redist.2.3.0.0\build\native\sfml-graphics.redist.targets')" />
