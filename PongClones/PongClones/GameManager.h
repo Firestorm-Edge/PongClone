@@ -6,8 +6,7 @@ class GameManager : sf::RenderWindow
 public:
 	GameManager();
 	void Play();
-	void SwitchToGame();
-	void SwitchToMenu();
+	void SwitchLoop(Loop newLoop);
 
 private:
 	sf::RenderWindow *wind;

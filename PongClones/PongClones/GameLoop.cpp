@@ -7,9 +7,10 @@ GameLoop::GameLoop() : ball(375, 275)
 
 }
 
-void GameLoop::Update()
+Loop* GameLoop::Update()
 {
 	ball.update();
+	return this;
 }
 
 void GameLoop::Input(sf::Event event)

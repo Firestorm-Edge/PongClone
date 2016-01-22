@@ -12,7 +12,6 @@ GameManager::GameManager()
 
 void GameManager::Play()
 {
-	//SwitchToGame();
 	while (running)
 	{
 		HandleEvents();
@@ -23,7 +22,7 @@ void GameManager::Play()
 
 void GameManager::Update()
 {
-	ActiveLoop->Update();
+	ActiveLoop = ActiveLoop->Update();
 }
 
 void GameManager::Draw()
@@ -49,12 +48,12 @@ void GameManager::PassInput(sf::Event event)
 	ActiveLoop->Input(event);
 }
 
-void GameManager::SwitchToGame()
+void GameManager::SwitchLoop(Loop newLoop)
 {
-	ActiveLoop = new GameLoop();
+	ActiveLoop = &newLoop;
 }
 
-void GameManager::SwitchToMenu()
-{
-	ActiveLoop = new MenuLoop();
-}
+//void GameManager::SwitchToMenu()
+//{
+//	ActiveLoop = new MenuLoop();
+//}
