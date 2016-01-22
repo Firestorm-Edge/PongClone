@@ -42,7 +42,7 @@ void MenuLoop::Input(sf::Event event)
 			picked = 1;
 		}
 		else if (event.key.code == sf::Keyboard::Return) {
-			if (picked = 0) {
+			if (picked == 0) {
 				//SOLO HERE
 			}
 			else {
