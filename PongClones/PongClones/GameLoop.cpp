@@ -2,7 +2,7 @@
 #include "GameActors.h"
 #include <SFML/Graphics.hpp>
 
-GameLoop::GameLoop() : ball(375, 275)
+GameLoop::GameLoop() : ball(375, 275), p1(1), p2(2)
 {
 
 }

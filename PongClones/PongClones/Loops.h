@@ -21,6 +21,7 @@ public:
 private:
 	sf::CircleShape circle;
 	Ball ball;
+	Paddle p1, p2;
 };
 
 class MenuLoop : public Loop

@@ -12,7 +12,7 @@ GameManager::GameManager()
 
 void GameManager::Play()
 {
-	//SwitchToGame();
+	SwitchToGame();
 	while (running)
 	{
 		HandleEvents();

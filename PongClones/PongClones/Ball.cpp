@@ -4,6 +4,9 @@
 Ball::Ball(int xLoc, int yLoc) : circle(25), xVel(3), yVel(3), x(375), y(275)
 {
 	circle.setFillColor(sf::Color(255, 0, 0));
+	//circle.setPointCount(3);
+	//circle.setOutlineColor(sf::Color(0, 0, 255));
+	//circle.setOutlineThickness(4);
 }
 
 void Ball::Draw(sf::RenderWindow *wind)
@@ -13,6 +16,7 @@ void Ball::Draw(sf::RenderWindow *wind)
 
 void Ball::update()
 {
+	//circle.rotate(3);
 	x += xVel;
 	y += yVel;
 	circle.setPosition(x, y);
