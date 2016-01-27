@@ -5,6 +5,8 @@ class Paddle
 {
 public:
 	Paddle(int player);
+	void Draw(sf::RenderWindow *wind);
+	void update();
 	int getY();
 	void move(int dir);
 private:

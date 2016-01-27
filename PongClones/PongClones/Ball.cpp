@@ -21,12 +21,14 @@ void Ball::update()
 	if (x > 750)
 	{
 		bounceX();
-		x = 750;
+		//x = 750;
+		reset();
 	}
 	else if (x < 0)
 	{
 		bounceX();
-		x = 0;
+		//x = 0;
+		reset();
 	}
 	if (y > 550)
 	{
