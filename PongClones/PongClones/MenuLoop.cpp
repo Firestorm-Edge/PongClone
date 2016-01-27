@@ -1,8 +1,9 @@
 #include "Loops.h"
 #include "SFML\Window.hpp"
 
-MenuLoop::MenuLoop()
+MenuLoop::MenuLoop() : selector(5)
 {
+
 	sf::Font *font = new sf::Font();
 	if (!font->loadFromFile("X-Cryption.ttf"))
 	{
@@ -14,15 +15,42 @@ MenuLoop::MenuLoop()
 	soloPlay.setPosition(280, 300);
 	multiPlay = sf::Text("Multiplayer", *font, 30);
 	multiPlay.setPosition(280, 400);
+
+	selector.setPosition(250, 320);
+	picked = 0;
+
+
 }
 
-void MenuLoop::Update() 
+Loop* MenuLoop::Update() 
 {
-	//Not sure we actually ever use this.
+	if (newLoop != NULL) {
+		return newLoop;
+	}
+	return this;
 }
 
-void MenuLoop::Input() 
+void MenuLoop::Input(sf::Event event)
 {
+	if (event.type == sf::Event::KeyPressed) {
+		if (event.key.code == sf::Keyboard::Up) {
+			selector.setPosition(250, 320);
+			picked = 0;
+		}
+		else if (event.key.code == sf::Keyboard::Down) {
+			selector.setPosition(250, 415);
+			picked = 1;
+		}
+		else if (event.key.code == sf::Keyboard::Return) {
+			if (picked == 0) {
+				//SOLO HERE
+			}
+			else {
+				newLoop = new GameLoop();
+				
+			}
+		}
+	}
 	//move cursor
 
 	//if Select, check what option is picked.
@@ -31,9 +59,10 @@ void MenuLoop::Input()
 void MenuLoop::Draw(sf::RenderWindow *win)
 {
 	win->draw(title);
+
 	win->draw(soloPlay);
 	win->draw(multiPlay);
-	//Draw Title.
+
+	win->draw(selector);
 	//Draw cursor.
-	//Draw menu options.
 }
