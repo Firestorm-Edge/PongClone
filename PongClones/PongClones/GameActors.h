@@ -39,6 +39,7 @@ public:
 	void reset();
 	int getX();
 	int getY();
+	int setScore;
 
 	void checkPaddle(int x1, int y1);
 

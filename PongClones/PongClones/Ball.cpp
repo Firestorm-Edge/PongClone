@@ -23,12 +23,14 @@ void Ball::update()
 		bounceX();
 		//x = 750;
 		reset();
+		setScore = 1;
 	}
 	else if (x < 0)
 	{
 		bounceX();
 		//x = 0;
 		reset();
+		setScore = -1;
 	}
 	if (y > 550)
 	{
