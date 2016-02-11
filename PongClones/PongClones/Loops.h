@@ -22,6 +22,9 @@ private:
 	sf::CircleShape circle;
 	Ball ball;
 	Paddle p1, p2;
+	int scoreLeft, scoreRight;
+	sf::Font *font;
+	sf::Text scoreLeftText, scoreRightText;
 };
 
 class AILoop : public Loop

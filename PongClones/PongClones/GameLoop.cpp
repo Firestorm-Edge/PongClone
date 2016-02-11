@@ -4,7 +4,17 @@
 
 GameLoop::GameLoop() : ball(375, 275), p1(1), p2(2)
 {
-
+	scoreLeft = 0;
+	scoreRight = 0;
+	font = new sf::Font();
+	if (!font->loadFromFile("X-Cryption.ttf"))
+	{
+		//title = new sf::Text("HERE BE PONG!", *font, 30);
+	}
+	scoreLeftText = sf::Text(std::to_string(scoreLeft), *font, 100);
+	scoreLeftText.setPosition(280, 50);
+	scoreRightText = sf::Text(std::to_string(scoreRight), *font, 100);
+	scoreRightText.setPosition(460, 50);
 }
 
 Loop* GameLoop::Update()
@@ -19,6 +29,20 @@ Loop* GameLoop::Update()
 	p2.update();
 
 	ball.update();
+
+	if (ball.setScore == -1) {
+		scoreRight++;
+		scoreRightText = sf::Text(std::to_string(scoreRight), *font, 100);
+		scoreRightText.setPosition(460, 50);
+		ball.setScore = 0;
+	}
+	else if (ball.setScore == 1) {
+		scoreLeft++;
+		scoreLeftText = sf::Text(std::to_string(scoreLeft), *font, 100);
+		scoreLeftText.setPosition(280, 50);
+		ball.setScore = 0;
+	}
+
 	return this;
 }
 
@@ -32,4 +56,6 @@ void GameLoop::Draw(sf::RenderWindow *wind)
 	ball.Draw(wind);
 	p1.Draw(wind);
 	p2.Draw(wind);
+	wind->draw(scoreLeftText);
+	wind->draw(scoreRightText);
 }

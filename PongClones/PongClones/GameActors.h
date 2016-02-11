@@ -37,6 +37,7 @@ public:
 	void reset();
 	int getX();
 	int getY();
+	int setScore;
 
 	void bounceY();
 	void bounceX();
