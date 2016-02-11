@@ -24,6 +24,20 @@ private:
 	Paddle p1, p2;
 };
 
+class AILoop : public Loop
+{
+public:
+	AILoop();
+	virtual Loop* Update();
+	virtual void Draw(sf::RenderWindow* win);
+	virtual void Input(sf::Event event);
+private:
+	sf::CircleShape circle;
+	Ball ball;
+	Paddle p1;
+	AIPaddle AI;
+};
+
 class MenuLoop : public Loop
 {
 public:

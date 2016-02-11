@@ -43,7 +43,7 @@ void MenuLoop::Input(sf::Event event)
 		}
 		else if (event.key.code == sf::Keyboard::Return) {
 			if (picked == 0) {
-				//SOLO HERE
+				newLoop = new AILoop();
 			}
 			else {
 				newLoop = new GameLoop();

@@ -14,6 +14,20 @@ private:
 	sf::RectangleShape box;
 };
 
+class AIPaddle
+{
+public:
+	AIPaddle();
+	void Draw(sf::RenderWindow *wind);
+	void update();
+	int getY();
+	void ballAt(int bally);
+	void move(int dir);
+private:
+	int x, y;
+	sf::RectangleShape box;
+};
+
 class Ball
 {
 public:

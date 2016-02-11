@@ -44,6 +44,9 @@ void Ball::update()
 
 void Ball::reset()
 {
+	if (xVel > 0) xVel = 3;
+	else xVel = -3;
+
 	x = 375;
 	y = 275;
 	circle.setPosition(x, y);
@@ -61,6 +64,8 @@ int Ball::getY()
 
 void Ball::bounceX()
 {
+	if (xVel > 0) xVel++;
+	else xVel--;
 	xVel = -xVel;
 }
 
