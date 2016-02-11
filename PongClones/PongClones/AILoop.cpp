@@ -15,6 +15,9 @@ Loop* AILoop::Update()
 
 	AI.ballAt(ball.getY());
 
+	ball.checkPaddle(p1.getX(), p1.getY());
+	ball.checkPaddle(AI.getX(), AI.getY());
+
 	p1.update();
 	AI.update();
 

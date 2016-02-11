@@ -42,6 +42,23 @@ void Ball::update()
 	}
 }
 
+void Ball::checkPaddle(int x1, int y1)
+{
+	if (y > y1 - 25 && y < y1 + 150)
+	{
+		if (xVel < 0 && x < x1 + 25 && x > x1)
+		{
+			x = x1 + 26;
+			bounceX();
+		}
+		else if (xVel > 0 && x < x1 + 25 && x > x1)
+		{
+			x = x1 - 26;
+			bounceX();
+		}
+	}
+}
+
 void Ball::reset()
 {
 	if (xVel > 0) xVel = 3;
@@ -64,8 +81,8 @@ int Ball::getY()
 
 void Ball::bounceX()
 {
-	if (xVel > 0) xVel++;
-	else xVel--;
+	//if (xVel > 0) xVel++;
+	//else xVel--;
 	xVel = -xVel;
 }
 

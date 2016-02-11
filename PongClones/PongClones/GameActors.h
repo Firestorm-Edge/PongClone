@@ -8,6 +8,7 @@ public:
 	void Draw(sf::RenderWindow *wind);
 	void update();
 	int getY();
+	int getX();
 	void move(int dir);
 private:
 	int x, y;
@@ -21,6 +22,7 @@ public:
 	void Draw(sf::RenderWindow *wind);
 	void update();
 	int getY();
+	int getX();
 	void ballAt(int bally);
 	void move(int dir);
 private:
@@ -37,6 +39,8 @@ public:
 	void reset();
 	int getX();
 	int getY();
+
+	void checkPaddle(int x1, int y1);
 
 	void bounceY();
 	void bounceX();

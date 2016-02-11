@@ -18,6 +18,9 @@ Loop* GameLoop::Update()
 	p1.update();
 	p2.update();
 
+	ball.checkPaddle(p1.getX(), p1.getY());
+	ball.checkPaddle(p2.getX(), p2.getY());
+
 	ball.update();
 	return this;
 }

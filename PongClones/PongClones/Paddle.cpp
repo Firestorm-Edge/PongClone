@@ -21,6 +21,11 @@ int Paddle::getY()
 	return y;
 }
 
+int Paddle::getX()
+{
+	return x;
+}
+
 void Paddle::move(int dir)
 {
 	if (dir > 0 && y < 450) y += 5;
