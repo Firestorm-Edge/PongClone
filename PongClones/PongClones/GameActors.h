@@ -8,6 +8,7 @@ public:
 	void Draw(sf::RenderWindow *wind);
 	void update();
 	int getY();
+	void ballAt(int bally);
 	void move(int dir);
 private:
 	int x, y;
