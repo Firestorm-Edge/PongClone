@@ -1,7 +1,7 @@
 #include "GameActors.h"
 #include <SFML/Graphics.hpp>
 
-Ball::Ball(int xLoc, int yLoc) : circle(25), xVel(3), yVel(3), x(375), y(275)
+Ball::Ball(int xLoc, int yLoc) : yIncrement(2), startVel(3), circle(25), xVel(startVel), yVel(0), x(375), y(275)
 {
 	circle.setFillColor(sf::Color(255, 0, 0));
 	circle.setPosition(x, y);
@@ -52,19 +52,26 @@ void Ball::checkPaddle(int x1, int y1)
 		{
 			x = x1 + 26;
 			bounceX();
+
+			if (y > y1 + 25) yVel += yIncrement;
+			if (y < y1 + 100) yVel -= yIncrement;
 		}
 		else if (xVel > 0 && x < x1 && x > x1 - 50)
 		{
 			x = x1 - 51;
 			bounceX();
+
+			if (y > y1 + 25) yVel += yIncrement;
+			if (y < y1 + 100) yVel -= yIncrement;
 		}
 	}
 }
 
 void Ball::reset()
 {
-	if (xVel > 0) xVel = -3;
-	else xVel = 3;
+	if (xVel > 0) xVel = startVel * -1;
+	else xVel = startVel;
+	yVel = 0;
 
 	x = 375;
 	y = 275;

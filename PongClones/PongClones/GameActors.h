@@ -46,7 +46,7 @@ public:
 	void bounceY();
 	void bounceX();
 private:
-	int x, y;
+	int x, y, startVel, yIncrement;
 	int xVel, yVel;
 	sf::CircleShape circle;
 };
