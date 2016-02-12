@@ -26,6 +26,12 @@ int Paddle::getX()
 	return x;
 }
 
+void Paddle::ballAt(int bally)
+{
+	if (bally > y) move(1);
+	else if (bally < y + 125) move(-1);
+}
+
 void Paddle::move(int dir)
 {
 	if (dir > 0 && y < 450) y += 5;

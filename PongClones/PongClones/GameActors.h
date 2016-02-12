@@ -9,6 +9,7 @@ public:
 	void update();
 	int getY();
 	int getX();
+	void ballAt(int bally);
 	void move(int dir);
 private:
 	int x, y;

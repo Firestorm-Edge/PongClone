@@ -14,11 +14,12 @@ public:
 class GameLoop : public Loop
 {
 public:
-	GameLoop();
+	GameLoop(bool isMultiplayer);
 	virtual Loop* Update();
 	virtual void Draw(sf::RenderWindow* win);
 	virtual void Input(sf::Event event);
 private:
+	bool multiplayer;
 	sf::CircleShape circle;
 	Ball ball;
 	Paddle p1, p2;

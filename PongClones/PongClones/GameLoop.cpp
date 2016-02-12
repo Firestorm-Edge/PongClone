@@ -2,8 +2,9 @@
 #include "GameActors.h"
 #include <SFML/Graphics.hpp>
 
-GameLoop::GameLoop() : ball(375, 275), p1(1), p2(2)
+GameLoop::GameLoop(bool isMultiplayer) : ball(375, 275), p1(1), p2(2)
 {
+	multiplayer = isMultiplayer;
 	scoreLeft = 0;
 	scoreRight = 0;
 	font = new sf::Font();
@@ -22,8 +23,13 @@ Loop* GameLoop::Update()
 	//This is a weird place to put this, but we aren't relying on events to move paddles. -C
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) p1.move(-1);
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) p1.move(1);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) p2.move(-1);
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) p2.move(1);
+	if (multiplayer) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) p2.move(-1);
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) p2.move(1);
+	}
+	else {
+		p2.ballAt(ball.getY());
+	}
 
 	p1.update();
 	p2.update();
