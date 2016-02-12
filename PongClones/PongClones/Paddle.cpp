@@ -21,6 +21,11 @@ int Paddle::getY()
 	return y;
 }
 
+int Paddle::getX()
+{
+	return x;
+}
+
 void Paddle::ballAt(int bally)
 {
 	if (bally > y) move(1);

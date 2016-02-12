@@ -13,6 +13,11 @@ void AIPaddle::update()
 	box.setPosition(x, y);
 }
 
+int AIPaddle::getX()
+{
+	return x;
+}
+
 void AIPaddle::ballAt(int bally)
 {
 	if (bally > y) move(1);

@@ -20,14 +20,14 @@ void Ball::update()
 	circle.setPosition(x, y);
 	if (x > 750)
 	{
-		bounceX();
+		//bounceX();
 		//x = 750;
 		reset();
 		setScore = 1;
 	}
 	else if (x < 0)
 	{
-		bounceX();
+		//bounceX();
 		//x = 0;
 		reset();
 		setScore = -1;
@@ -44,10 +44,27 @@ void Ball::update()
 	}
 }
 
+void Ball::checkPaddle(int x1, int y1)
+{
+	if (y > y1 - 25 && y < y1 + 150)
+	{
+		if (xVel < 0 && x < x1 + 25 && x > x1)
+		{
+			x = x1 + 26;
+			bounceX();
+		}
+		else if (xVel > 0 && x < x1 && x > x1 - 50)
+		{
+			x = x1 - 51;
+			bounceX();
+		}
+	}
+}
+
 void Ball::reset()
 {
-	if (xVel > 0) xVel = 3;
-	else xVel = -3;
+	if (xVel > 0) xVel = -3;
+	else xVel = 3;
 
 	x = 375;
 	y = 275;
