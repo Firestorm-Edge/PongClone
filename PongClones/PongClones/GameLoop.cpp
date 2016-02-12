@@ -52,6 +52,10 @@ Loop* GameLoop::Update()
 		ball.setScore = 0;
 	}
 
+	if (scoreLeft >= 10 || scoreRight >= 10) {
+		return new MenuLoop();
+	}
+
 	return this;
 }
 
