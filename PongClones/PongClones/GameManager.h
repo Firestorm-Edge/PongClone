@@ -5,6 +5,7 @@ class GameManager : sf::RenderWindow
 {
 public:
 	GameManager();
+	~GameManager();
 	void Play();
 	void SwitchLoop(Loop newLoop);
 

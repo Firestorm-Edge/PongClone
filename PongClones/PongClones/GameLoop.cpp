@@ -72,3 +72,14 @@ void GameLoop::Draw(sf::RenderWindow *wind)
 	wind->draw(scoreLeftText);
 	wind->draw(scoreRightText);
 }
+
+GameLoop::~GameLoop()
+{
+	delete &circle;
+	delete &ball;
+	delete &p1, &p2;
+	delete &scoreLeftText, &scoreRightText;
+
+	delete font;
+
+}

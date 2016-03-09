@@ -65,3 +65,11 @@ void MenuLoop::Draw(sf::RenderWindow *win)
 	win->draw(selector);
 	//Draw cursor.
 }
+
+MenuLoop::~MenuLoop() 
+{
+	delete &title;
+	delete &soloPlay;
+	delete &multiPlay;
+	delete &selector;
+}

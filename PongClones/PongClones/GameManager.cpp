@@ -10,6 +10,12 @@ GameManager::GameManager()
 	ActiveLoop = new MenuLoop();
 }
 
+GameManager::~GameManager()
+{
+	delete &wind;
+	delete &ActiveLoop;
+}
+
 void GameManager::Play()
 {
 	while (running)
@@ -22,7 +28,13 @@ void GameManager::Play()
 
 void GameManager::Update()
 {
-	ActiveLoop = ActiveLoop->Update();
+
+	//NEEDS TO KNOW IF ACTIVE LOOP CHANGES.
+	Loop *tempLoop = ActiveLoop->Update();
+	if (tempLoop != ActiveLoop) {
+		delete ActiveLoop;
+		ActiveLoop = tempLoop;
+	}
 }
 
 void GameManager::Draw()

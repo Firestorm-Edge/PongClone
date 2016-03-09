@@ -5,6 +5,7 @@ class Paddle
 {
 public:
 	Paddle(int player);
+	virtual ~Paddle();
 	void Draw(sf::RenderWindow *wind);
 	void update();
 	int getY();
@@ -20,6 +21,7 @@ class AIPaddle
 {
 public:
 	AIPaddle();
+	virtual ~AIPaddle();
 	void Draw(sf::RenderWindow *wind);
 	void update();
 	int getY();
@@ -35,6 +37,7 @@ class Ball
 {
 public:
 	Ball(int xLoc, int yLoc);
+	~Ball();
 	void Draw(sf::RenderWindow *wind);
 	void update();
 	void reset();

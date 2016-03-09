@@ -7,6 +7,11 @@ Ball::Ball(int xLoc, int yLoc) : yIncrement(2), startVel(3), circle(25), xVel(st
 	circle.setPosition(x, y);
 }
 
+Ball::~Ball()
+{
+	delete &circle;
+}
+
 void Ball::Draw(sf::RenderWindow *wind)
 {
 	wind->draw(circle);

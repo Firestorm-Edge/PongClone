@@ -11,6 +11,11 @@ Paddle::Paddle(int player): box(sf::Vector2f(25, 150))
 	box.setPosition(x, y);
 }
 
+Paddle::~Paddle() 
+{
+	delete &box;
+}
+
 void Paddle::update()
 {
 	box.setPosition(x, y);

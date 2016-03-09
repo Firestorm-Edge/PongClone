@@ -135,12 +135,10 @@ xcopy /y /d  "..\lib\SFML-2.3.2\bin\sfml-audio-d-2.dll" "$(OutDir)"</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AILoop.cpp" />
     <ClCompile Include="AIPaddle.cpp" />
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="Loops.cpp" />
     <ClCompile Include="MenuLoop.cpp" />
     <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="PongClones.cpp" />

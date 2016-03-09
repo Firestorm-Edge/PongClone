@@ -8,6 +8,11 @@ AIPaddle::AIPaddle() : box(sf::Vector2f(25, 150))
 	box.setPosition(x, y);
 }
 
+AIPaddle::~AIPaddle()
+{
+	delete &box;
+}
+
 void AIPaddle::update()
 {
 	box.setPosition(x, y);
